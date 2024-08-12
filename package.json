@@ -9,16 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.44",
+    "@hookform/resolvers": "^3.9.0",
+    "@llama-node/llama-cpp": "^0.1.6",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toast": "^1.2.1",
+    "ai": "^3.3.5",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "llama-node": "^0.1.6",
+    "lucide-react": "^0.427.0",
+    "mongoose": "^8.5.2",
+    "next": "14.2.5",
+    "openai": "^4.55.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-hook-form": "^7.52.2",
+    "tailwind-merge": "^2.5.0",
+    "tailwindcss-animate": "^1.0.7",
+    "usehooks-ts": "^3.1.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

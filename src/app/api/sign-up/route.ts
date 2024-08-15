@@ -1,5 +1,5 @@
 import dbConnect from "@/Database/dbConnect";
-import User from "@/models/User";
+import UserModel from "@/models/User";
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import { sendVerificationEmail } from "@/Helpers/senVerificationEmail";
@@ -8,13 +8,13 @@ export async function POST(request: Request) {
     await dbConnect()
     try {
         const { email, username, password } = await request.json()
-        const userExistByUsername = await User.findOne({ username, isVerified: true })
+        const userExistByUsername = await UserModel.findOne({ username, isVerified: true })
 
         if (userExistByUsername) {
             return Response.json({ success: false, message: "Already exist" }, { status: 400 })
         }
 
-        const existingUserByEmail = await User.findOne({ email })
+        const existingUserByEmail = await UserModel.findOne({ email })
 
         if (existingUserByEmail) {
             return Response.json({ success: false, message: "Already exist" }, { status: 400 })
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
         const expiryDate = new Date()
         expiryDate.setHours(expiryDate.getHours() + 1)
 
-        const newUser = new User({
+        const newUser = new UserModel({
             username: username,
             password: hassPassword,
             email: email,

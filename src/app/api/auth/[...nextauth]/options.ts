@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
                 try {
                     const user = await UserModel.findOne({
                         $or: [
-                            { email: credentials.identifier.email },
+                            { email: credentials.identifier },
                             { username: credentials.identifier }
                         ]
                     })
@@ -67,6 +67,7 @@ export const authOptions: NextAuthOptions = {
     },
     pages: {
         signIn: "/sign-in",
+        signOut:""
     },
     session: {
         strategy: "jwt"
